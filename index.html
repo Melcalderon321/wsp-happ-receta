@@ -33,9 +33,25 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             margin: 0;
-            overflow: hidden;
+            padding: 40px 20px;
+            overflow-y: auto;
+        }
+
+        /* Responsive Scaling for smaller screens */
+        @media (max-height: 820px) {
+            .phone-frame {
+                transform: scale(0.9);
+                margin: -40px 0;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .phone-frame {
+                transform: scale(0.8);
+                margin: -80px 0;
+            }
         }
 
         /* Phone Frame */
@@ -122,8 +138,8 @@
             display: flex;
             flex-direction: column;
             gap: 12px;
-            background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
-            background-blend-mode: overlay;
+            background-color: var(--wsp-bg);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23000' fill-opacity='0.02'%3E%3Cpath fill-rule='evenodd' d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm66-3c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-78-3c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm92-4c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM81 73c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-45 18c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-9-70c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM4-26c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm74 74c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM44 70c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-74 74c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z'/%3E%3C/g%3E%3C/svg%3E");
             scrollbar-width: none;
         }
 
@@ -185,7 +201,6 @@
         }
 
         .wsp-button-card span.icon {
-            opacity: 0.3;
             font-size: 18px;
         }
 
@@ -640,7 +655,7 @@
             const html = `
                 <div class="quote-card" style="border-radius: 12px; border: 1px solid #e9edef;">
                     <div style="width: 100%; height: 180px; overflow: hidden; background: white; display: flex; align-items: center; justify-content: center;">
-                        <img src="medication_detail.webp" style="width: 90%; height: 90%; object-fit: contain;">
+                        <img src="assets/medication_detail.webp" style="width: 90%; height: 90%; object-fit: contain;">
                     </div>
                     <div style="padding: 16px; border-top: 1px solid #f0f0f0;">
                         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px;">
